@@ -1,6 +1,12 @@
 # LinkedIn Frame Generator
 
+[![Deploy to GitHub Pages](https://github.com/MarJC5/linkedin-frame/actions/workflows/deploy.yml/badge.svg)](https://github.com/MarJC5/linkedin-frame/actions/workflows/deploy.yml)
+
 Micro web app pour générer une frame custom (style `#FREELANCE`, `#OPENTOWORK`, `#HIRING`) sur une photo de profil LinkedIn.
+
+**[Démo en ligne →](https://marjc5.github.io/linkedin-frame/)**
+
+![Aperçu de l'application](docs/preview.png)
 
 - **100% client-side** : aucune image n'est envoyée à un serveur, rien n'est conservé après rechargement.
 - **Qualité native** : l'image originale est traitée à sa résolution native, la frame est vectorielle (SVG), l'export est un PNG non recompressé.
