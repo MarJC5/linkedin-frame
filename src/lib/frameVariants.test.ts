@@ -7,11 +7,9 @@ describe('frameVariants', () => {
     expect(ids).toEqual(['arc-bottom', 'arc-top', 'circle'])
   })
 
-  it('each variant has an id, a label, a path d, and a startOffset', () => {
+  it('each variant has an id, a path d, and a startOffset', () => {
     for (const v of FRAME_VARIANTS) {
       expect(v.id).toMatch(/^(arc-bottom|arc-top|circle)$/)
-      expect(typeof v.label).toBe('string')
-      expect(v.label.length).toBeGreaterThan(0)
       expect(v.pathD).toMatch(/^M /)
       expect(v.startOffset).toMatch(/^\d+(\.\d+)?%$/)
     }

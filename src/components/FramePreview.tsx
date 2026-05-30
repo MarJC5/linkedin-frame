@@ -1,6 +1,7 @@
 import { useId, useRef, useState } from 'react'
 import { FrameSVG } from './FrameSVG'
 import { loadImageFromFile } from '../lib/loadImage'
+import { useI18n } from '../lib/i18n'
 import type { FrameVariantId } from '../lib/frameVariants'
 import styles from './FramePreview.module.css'
 
@@ -35,6 +36,7 @@ export function FramePreview({
   rounded,
   className,
 }: Props) {
+  const { t } = useI18n()
   const frameRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
   const inputId = useId()
@@ -168,8 +170,8 @@ export function FramePreview({
                 strokeLinecap="round"
               />
             </svg>
-            <strong>Glissez votre photo</strong>
-            <span>ou cliquez pour parcourir</span>
+            <strong>{t('upload.title')}</strong>
+            <span>{t('upload.sub')}</span>
           </button>
         )}
 
@@ -186,16 +188,16 @@ export function FramePreview({
         ref={inputRef}
         type="file"
         accept="image/*"
-        aria-label="Photo"
+        aria-label={t('preview.photo')}
         className={styles.input}
         onChange={(e) => void handleFiles(e.target.files)}
       />
 
       {image && (
         <p className={styles.caption}>
-          Glissez la photo pour la recadrer ·{' '}
+          {t('preview.reposition')} ·{' '}
           <button type="button" className={styles.change} onClick={openPicker}>
-            Changer la photo
+            {t('preview.change')}
           </button>
         </p>
       )}

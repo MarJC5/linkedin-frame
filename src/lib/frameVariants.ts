@@ -15,7 +15,7 @@ export type FrameGradient = {
 
 export type FrameVariant = {
   id: FrameVariantId
-  label: string
+  // The visible label is resolved from i18n (`variant.<id>`) in the UI.
   // Always a full 360° ring. The visible "arc" is produced by the gradient.
   pathD: string
   // Where the text begins along the ring.
@@ -50,7 +50,6 @@ export const FRAME_VARIANTS: ReadonlyArray<FrameVariant> = [
     // side (~9 o'clock) and flows along the bottom; solid colour across the
     // bottom cap, fading upward into the photo.
     id: 'arc-bottom',
-    label: 'Bandeau bas',
     pathD: RING_CCW,
     startOffset: '3%',
     textAnchor: 'start',
@@ -63,7 +62,6 @@ export const FRAME_VARIANTS: ReadonlyArray<FrameVariant> = [
     // Mirror: text starts on the upper-left side and flows along the top;
     // solid across the top cap, fading downward.
     id: 'arc-top',
-    label: 'Bandeau haut',
     pathD: RING_CW,
     startOffset: '3%',
     textAnchor: 'start',
@@ -74,7 +72,6 @@ export const FRAME_VARIANTS: ReadonlyArray<FrameVariant> = [
   {
     // Solid ring all the way around — text wraps the full circle.
     id: 'circle',
-    label: 'Anneau complet',
     pathD: RING_CCW,
     startOffset: '3%',
     textAnchor: 'start',

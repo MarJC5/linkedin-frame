@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Editor, type EditorState } from './components/Editor'
 import { FramePreview, type ImagePosition } from './components/FramePreview'
+import { LangSwitch } from './components/LangSwitch'
 import { composeAndDownload } from './lib/composeAndDownload'
+import { useI18n } from './lib/i18n'
 import styles from './App.module.css'
 
 const CENTERED: ImagePosition = { x: 50, y: 50 }
@@ -14,6 +16,7 @@ const DEFAULT_STATE: EditorState = {
 }
 
 export default function App() {
+  const { t } = useI18n()
   const [image, setImage] = useState<HTMLImageElement | null>(null)
   const [state, setState] = useState<EditorState>(DEFAULT_STATE)
   const [position, setPosition] = useState<ImagePosition>(CENTERED)
@@ -49,13 +52,10 @@ export default function App() {
   return (
     <div className={styles.page}>
       <header className={styles.masthead}>
-        <p className={styles.eyebrow}>Générateur de frame LinkedIn</p>
-        <h1 className={styles.title}>Encadrez votre photo de profil.</h1>
-        <p className={styles.subtitle}>
-          Un bandeau circulaire sur-mesure. Texte et couleur libres, recadrage
-          au glisser. Tout se passe dans votre navigateur, rien n'est envoyé
-          nulle part.
-        </p>
+        <LangSwitch className={styles.langSwitch} />
+        <p className={styles.eyebrow}>{t('masthead.eyebrow')}</p>
+        <h1 className={styles.title}>{t('masthead.title')}</h1>
+        <p className={styles.subtitle}>{t('masthead.subtitle')}</p>
       </header>
 
       <main className={styles.split}>
@@ -100,7 +100,7 @@ export default function App() {
             className={styles.privacyLink}
             onClick={() => setPrivacyOpen(true)}
           >
-            Confidentialité
+            {t('footer.privacy')}
           </button>
         </div>
       </footer>
@@ -115,18 +115,15 @@ export default function App() {
         >
           <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
             <h2 id="privacy-title" className={styles.modalTitle}>
-              Confidentialité
+              {t('modal.title')}
             </h2>
-            <p className={styles.modalText}>
-              Aucune image n'est envoyée nulle part. Tout est traité localement
-              dans votre navigateur, et rien n'est conservé après rechargement.
-            </p>
+            <p className={styles.modalText}>{t('modal.text')}</p>
             <button
               type="button"
               className={styles.modalClose}
               onClick={() => setPrivacyOpen(false)}
             >
-              Fermer
+              {t('modal.close')}
             </button>
           </div>
         </div>

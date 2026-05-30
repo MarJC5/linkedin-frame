@@ -1,0 +1,29 @@
+.switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 13px;
+}
+
+.btn {
+  border: none;
+  background: none;
+  padding: 4px 6px;
+  font: inherit;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: color 120ms ease;
+}
+
+.btn:hover {
+  color: #6b7280;
+}
+
+.btn[aria-pressed='true'] {
+  color: #111111;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}

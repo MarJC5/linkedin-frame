@@ -1,4 +1,5 @@
 import { FRAME_VARIANTS, type FrameVariantId } from '../lib/frameVariants'
+import { useI18n } from '../lib/i18n'
 import { ColorPicker } from './ColorPicker'
 import styles from './Editor.module.css'
 
@@ -19,6 +20,8 @@ type Props = {
 }
 
 export function Editor({ state, onChange, onDownload, canDownload }: Props) {
+  const { t } = useI18n()
+
   function set<K extends keyof EditorState>(key: K, value: EditorState[K]) {
     onChange({ ...state, [key]: value })
   }
@@ -26,10 +29,10 @@ export function Editor({ state, onChange, onDownload, canDownload }: Props) {
   return (
     <div className={styles.wrap}>
       <label className={styles.field}>
-        <span className={styles.label}>Texte de la frame</span>
+        <span className={styles.label}>{t('field.text')}</span>
         <input
           type="text"
-          aria-label="Texte de la frame"
+          aria-label={t('field.text')}
           value={state.text}
           maxLength={24}
           onChange={(e) => set('text', e.target.value)}
@@ -38,13 +41,17 @@ export function Editor({ state, onChange, onDownload, canDownload }: Props) {
       </label>
 
       <div className={styles.field}>
-        <span className={styles.label}>Couleur</span>
+        <span className={styles.label}>{t('field.color')}</span>
         <ColorPicker value={state.color} onChange={(c) => set('color', c)} />
       </div>
 
       <div className={styles.field}>
-        <span className={styles.label}>Style de frame</span>
-        <div className={styles.radios} role="radiogroup" aria-label="Style de frame">
+        <span className={styles.label}>{t('field.style')}</span>
+        <div
+          className={styles.radios}
+          role="radiogroup"
+          aria-label={t('field.style')}
+        >
           {FRAME_VARIANTS.map((v) => (
             <label key={v.id} className={styles.radio}>
               <input
@@ -54,23 +61,23 @@ export function Editor({ state, onChange, onDownload, canDownload }: Props) {
                 checked={state.variant === v.id}
                 onChange={() => set('variant', v.id)}
               />
-              <span>{v.label}</span>
+              <span>{t(`variant.${v.id}`)}</span>
             </label>
           ))}
         </div>
       </div>
 
       <label className={styles.field}>
-        <span className={styles.label}>Taille d'export</span>
+        <span className={styles.label}>{t('field.export')}</span>
         <select
-          aria-label="Taille d'export"
+          aria-label={t('field.export')}
           value={String(state.exportSize)}
           onChange={(e) => {
             const v = e.target.value
             set('exportSize', v === 'native' ? 'native' : (Number(v) as ExportSize))
           }}
         >
-          <option value="native">Taille native (recommandé)</option>
+          <option value="native">{t('export.native')}</option>
           <option value="800">800 × 800 px</option>
           <option value="400">400 × 400 px</option>
         </select>
@@ -82,7 +89,7 @@ export function Editor({ state, onChange, onDownload, canDownload }: Props) {
         disabled={!canDownload}
         onClick={onDownload}
       >
-        Télécharger en PNG
+        {t('action.download')}
       </button>
     </div>
   )

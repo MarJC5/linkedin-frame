@@ -1,14 +1,17 @@
+import { useI18n } from '../lib/i18n'
 import styles from './ColorPicker.module.css'
 
-export type ColorPreset = { label: string; value: string }
+// `key` maps to a translation key (`color.<key>`); the visible label is resolved
+// at render time so preset names follow the active language.
+export type ColorPreset = { key: string; value: string }
 
 export const COLOR_PRESETS: ReadonlyArray<ColorPreset> = [
-  { label: 'Vert OpenToWork', value: '#3D7937' },
-  { label: 'Bleu LinkedIn', value: '#0A66C2' },
-  { label: 'Orange', value: '#E0651A' },
-  { label: 'Rouge', value: '#C0392B' },
-  { label: 'Violet', value: '#6E40C9' },
-  { label: 'Noir', value: '#111111' },
+  { key: 'green-otw', value: '#3D7937' },
+  { key: 'linkedin', value: '#0A66C2' },
+  { key: 'orange', value: '#E0651A' },
+  { key: 'red', value: '#C0392B' },
+  { key: 'purple', value: '#6E40C9' },
+  { key: 'black', value: '#111111' },
 ]
 
 type Props = {
@@ -17,9 +20,11 @@ type Props = {
 }
 
 export function ColorPicker({ value, onChange }: Props) {
+  const { t } = useI18n()
+
   return (
     <div className={styles.wrap}>
-      <div className={styles.presets} role="group" aria-label="Couleurs prédéfinies">
+      <div className={styles.presets} role="group" aria-label={t('color.group')}>
         {COLOR_PRESETS.map((p) => {
           const active = p.value.toLowerCase() === value.toLowerCase()
           return (
@@ -28,7 +33,7 @@ export function ColorPicker({ value, onChange }: Props) {
               type="button"
               className={styles.preset}
               style={{ background: p.value }}
-              aria-label={p.label}
+              aria-label={t(`color.${p.key}`)}
               aria-pressed={active}
               onClick={() => onChange(p.value)}
             />
@@ -36,7 +41,7 @@ export function ColorPicker({ value, onChange }: Props) {
         })}
       </div>
       <label className={styles.custom}>
-        <span>Couleur personnalisée</span>
+        <span>{t('color.custom')}</span>
         <input
           type="color"
           value={value}
