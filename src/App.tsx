@@ -86,13 +86,23 @@ export default function App() {
 
       <footer className={styles.footer}>
         <span>© {new Date().getFullYear()} LinkedIn Frame Generator</span>
-        <button
-          type="button"
-          className={styles.privacyLink}
-          onClick={() => setPrivacyOpen(true)}
-        >
-          Confidentialité
-        </button>
+        <div className={styles.footerLinks}>
+          <a
+            className={styles.privacyLink}
+            href="https://www.buymeacoffee.com/misits"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ☕ Buy me a coffee
+          </a>
+          <button
+            type="button"
+            className={styles.privacyLink}
+            onClick={() => setPrivacyOpen(true)}
+          >
+            Confidentialité
+          </button>
+        </div>
       </footer>
 
       {privacyOpen && (

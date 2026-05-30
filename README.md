@@ -44,3 +44,9 @@ src/
     loadImage.ts             # File → HTMLImageElement
     composeAndDownload.ts    # canvas → PNG download (avec recadrage)
 ```
+
+## Soutenir
+
+Si ce projet vous est utile, vous pouvez m'offrir un café :
+
+<a href="https://www.buymeacoffee.com/misits"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=misits&button_colour=FFDD00&font_colour=000000&font_family=Poppins&outline_colour=000000&coffee_colour=ffffff" alt="Buy me a coffee" /></a>

@@ -92,6 +92,12 @@
   color: #9ca3af;
 }
 
+.footerLinks {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
 .privacyLink {
   border: none;
   background: none;
