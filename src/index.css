@@ -1,0 +1,35 @@
+:root {
+  /* Page architecture lines (masthead, split divider, footer, modal). */
+  --rule-strong: #dcdcdc;
+  /* Hairline borders for every form control (inputs, presets, dropzone…). */
+  --rule-hair: #ececec;
+  /* Monochrome interaction system: black for focus/active, grey tint for hover. */
+  --accent: #111111;
+  --hover: #f4f4f4;
+  /* Single type family across the whole app. */
+  --font: 'Helvetica Neue', Helvetica, Arial, 'Segoe UI', Roboto, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background: #ffffff;
+  color: #111111;
+}
+
+button {
+  font-family: inherit;
+}

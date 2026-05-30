@@ -1,0 +1,159 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  color: #111111;
+}
+
+/* ---- Masthead ---------------------------------------------------------- */
+
+.masthead {
+  padding: clamp(36px, 6vw, 80px) clamp(24px, 6vw, 88px) clamp(28px, 4vw, 48px);
+  border-bottom: 1px solid var(--rule-strong);
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: #6b7280;
+}
+
+.title {
+  margin: 0;
+  max-width: 18ch;
+  font-weight: 700;
+  font-size: clamp(38px, 6.4vw, 76px);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+.subtitle {
+  margin: 20px 0 0;
+  max-width: 56ch;
+  font-size: clamp(15px, 1.4vw, 18px);
+  line-height: 1.5;
+  color: #4b5563;
+}
+
+/* ---- Split ------------------------------------------------------------- */
+
+.split {
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  align-items: stretch;
+}
+
+.previewSide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(32px, 5vw, 72px) clamp(24px, 5vw, 64px);
+  background: transparent;
+}
+
+.previewInner {
+  width: 100%;
+  max-width: 440px;
+}
+
+.controlsSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(32px, 5vw, 72px) clamp(24px, 6vw, 88px);
+  border-left: 1px solid var(--rule-strong);
+}
+
+@media (max-width: 860px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .controlsSide {
+    border-left: none;
+    border-top: 1px solid var(--rule-strong);
+  }
+}
+
+/* ---- Footer ------------------------------------------------------------ */
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px clamp(24px, 6vw, 88px);
+  border-top: 1px solid var(--rule-strong);
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.privacyLink {
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  font-size: 12px;
+  color: #6b7280;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.privacyLink:hover {
+  color: #111111;
+}
+
+/* ---- Privacy modal ----------------------------------------------------- */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.85);
+  z-index: 50;
+}
+
+.modal {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border: 1px solid var(--rule-strong);
+  padding: 28px;
+}
+
+.modalTitle {
+  margin: 0 0 12px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.modalText {
+  margin: 0 0 24px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+.modalClose {
+  border: none;
+  background: #111111;
+  color: #ffffff;
+  padding: 11px 20px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.modalClose:hover {
+  background: #000000;
+}

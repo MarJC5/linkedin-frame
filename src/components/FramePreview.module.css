@@ -1,0 +1,142 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.frame {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  overflow: hidden;
+  background: #f3f4f6;
+  border-radius: 16px;
+}
+
+.rounded {
+  border-radius: 50%;
+}
+
+.over::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(17, 17, 17, 0.06);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.draggable {
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.draggable:active {
+  cursor: grabbing;
+}
+
+/* ---- Integrated dropzone (no image yet) -------------------------------- */
+
+.placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  font: inherit;
+  color: #6b7280;
+  background: radial-gradient(
+    circle at 50% 42%,
+    #ffffff 0%,
+    #f3f4f6 60%,
+    #eceef1 100%
+  );
+  transition: color 150ms ease;
+}
+
+.placeholder:hover {
+  color: #111111;
+}
+
+.uploadIcon {
+  width: 34px;
+  height: 34px;
+  margin-bottom: 6px;
+  color: inherit;
+  transition: transform 150ms ease;
+}
+
+.placeholder:hover .uploadIcon {
+  transform: translateY(-2px);
+}
+
+.placeholder strong {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111111;
+}
+
+.placeholder span {
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+/* ---- Caption under the frame ------------------------------------------- */
+
+.caption {
+  margin: 0;
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.change {
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  color: #6b7280;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.change:hover {
+  color: #111111;
+}
