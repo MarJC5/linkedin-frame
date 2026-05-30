@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="LinkedIn Frame">
+  <defs>
+    <linearGradient id="ring" gradientUnits="userSpaceOnUse" x1="37" y1="54" x2="46" y2="33">
+      <stop offset="0" stop-color="#0A66C2" />
+      <stop offset="1" stop-color="#0A66C2" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="31" fill="#EDF0F3" />
+  <path
+    d="M 6 32 a 26 26 0 1 0 52 0 a 26 26 0 1 0 -52 0"
+    fill="none"
+    stroke="url(#ring)"
+    stroke-width="10"
+  />
+</svg>

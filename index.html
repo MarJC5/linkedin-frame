@@ -3,11 +3,80 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Generate a custom LinkedIn frame on your profile picture, fully client-side. No upload, no tracking." />
-    <title>LinkedIn Frame Generator</title>
+
+    <title>LinkedIn Frame Generator · Bandeau #OPENTOWORK & #FREELANCE</title>
+    <meta
+      name="description"
+      content="Ajoutez un bandeau circulaire custom (#OPENTOWORK, #FREELANCE, #HIRING) à votre photo de profil LinkedIn. Texte et couleur libres, export PNG, 100% privé et gratuit."
+    />
+    <link rel="canonical" href="https://marjc5.github.io/linkedin-frame/" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a66c2" />
+    <meta name="author" content="MarJC5" />
+
+    <!-- Icons / manifest (Vite prefixes the GitHub Pages base at build) -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="LinkedIn Frame Generator" />
+    <meta
+      property="og:title"
+      content="LinkedIn Frame Generator · Bandeau #OPENTOWORK & #FREELANCE"
+    />
+    <meta
+      property="og:description"
+      content="Ajoutez un bandeau circulaire custom à votre photo de profil LinkedIn. Texte et couleur libres, export PNG, 100% privé et gratuit."
+    />
+    <meta property="og:url" content="https://marjc5.github.io/linkedin-frame/" />
+    <meta property="og:image" content="https://marjc5.github.io/linkedin-frame/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Photo de profil encadrée d'un bandeau #FREELANCE"
+    />
+    <meta property="og:locale" content="fr_FR" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="LinkedIn Frame Generator · Bandeau #OPENTOWORK & #FREELANCE"
+    />
+    <meta
+      name="twitter:description"
+      content="Ajoutez un bandeau circulaire custom à votre photo de profil LinkedIn. 100% privé et gratuit."
+    />
+    <meta name="twitter:image" content="https://marjc5.github.io/linkedin-frame/og-image.png" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "LinkedIn Frame Generator",
+        "url": "https://marjc5.github.io/linkedin-frame/",
+        "description": "Ajoutez un bandeau circulaire custom (#OPENTOWORK, #FREELANCE, #HIRING) à votre photo de profil LinkedIn. Texte et couleur libres, export PNG, 100% dans votre navigateur.",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Web",
+        "browserRequirements": "Requires JavaScript",
+        "inLanguage": "fr",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+        "author": { "@type": "Person", "name": "MarJC5" }
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      LinkedIn Frame Generator : ajoutez un bandeau circulaire custom à votre
+      photo de profil LinkedIn. Activez JavaScript pour utiliser l'application.
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

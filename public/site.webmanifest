@@ -1,0 +1,24 @@
+{
+  "name": "LinkedIn Frame Generator",
+  "short_name": "LI Frame",
+  "description": "Ajoutez un bandeau circulaire custom (#OPENTOWORK, #FREELANCE, #HIRING) à votre photo de profil LinkedIn. 100% dans votre navigateur.",
+  "lang": "fr",
+  "start_url": "/linkedin-frame/",
+  "scope": "/linkedin-frame/",
+  "display": "standalone",
+  "theme_color": "#0a66c2",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
